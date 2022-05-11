@@ -40,34 +40,6 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             && $request->isMethod('POST');
     }
 
-//    public function getCredentials(Request $request)
-//    {
-//        $credentials = [
-//            'email' => $request->request->get('email'),
-//            'password' => $request->request->get('password'),
-//            'csrf_token' => $request->request->get('_csrf_token'),
-//        ];
-//
-//
-//
-//        return $credentials;
-//    }
-
-//    public function getUser($credentials, UserProviderInterface $userProvider)
-//    {
-//        $token = new CsrfToken('authenticate', $credentials['csrf_token']);
-//        if (!$this->csrfTokenManager->isTokenValid($token)) {
-//            throw new InvalidCsrfTokenException();
-//        }
-//
-//        return $this->userRepository->findOneBy(['email' => $credentials['email']]);
-//    }
-//
-//    public function checkCredentials($credentials, UserInterface $user)
-//    {
-//        return $this->passwordHasher->isPasswordValid($user, $credentials['password']);
-//    }
-
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey): RedirectResponse
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {

@@ -408,6 +408,9 @@
     "symfony/proxy-manager-bridge": {
         "version": "v6.0.6"
     },
+    "symfony/redis-messenger": {
+        "version": "v6.0.7"
+    },
     "symfony/routing": {
         "version": "6.0",
         "recipe": {
